@@ -1,4 +1,4 @@
-export function FiveStarRating({ rating }: { rating: number }) {
+export function FiveStarRating({ rating }: Readonly<{ rating: number }>) {
   return (
     <div className="flex items-center gap-1">
       {[...Array(5)].map((_, i) =>

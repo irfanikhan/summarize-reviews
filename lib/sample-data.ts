@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Product } from "./types";
 
 export async function getProduct(id: string) {
-  const product = sampleProductsReviews[id] as Product;
+  const product = sampleProductsReviews[id];
   if (!product) {
     notFound();
   }

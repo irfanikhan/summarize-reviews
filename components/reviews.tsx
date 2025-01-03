@@ -4,7 +4,7 @@ import ms from "ms";
 import { FiveStarRating } from "./five-star-rating";
 import { AIReviewSummary } from "./ai-review-summary";
 
-export async function Reviews({ product }: { product: Product }) {
+export async function Reviews({ product }: Readonly<{ product: Product }>) {
   return (
     <div className="mx-auto px-4 md:px-6 max-w-2xl grid gap-12">
       <AIReviewSummary product={product} />
@@ -17,7 +17,7 @@ export async function Reviews({ product }: { product: Product }) {
   );
 }
 
-export function Review({ review }: { review: ReviewType }) {
+export function Review({ review }: Readonly<{ review: ReviewType }>) {
   const date = new Date(review.date);
   return (
     <div className="flex gap-4">

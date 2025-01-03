@@ -9,7 +9,7 @@ import { Product } from "@/lib/types";
 import { summarizeReviews } from "@/lib/ai-summary";
 import { FiveStarRating } from "./five-star-rating";
 
-export async function AIReviewSummary({ product }: { product: Product }) {
+export async function AIReviewSummary({ product }: Readonly<{ product: Product }>) {
   const summary = await summarizeReviews(product);
   const averageRating =
     product.reviews.reduce((acc, review) => acc + review.stars, 0) /
